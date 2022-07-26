@@ -1,3 +1,5 @@
-export default function Home() {
-  return <div>Welcome to MFE-1</div>;
+import styles from "../styles/MyComponent.module.css";
+
+export default function MyComponent() {
+  return <div className={styles.container}>Welcome to MFE-1</div>;
 }
