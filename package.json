@@ -1,13 +1,14 @@
 {
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "PORT=4000 next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
     "next": "12.1.4",
+    "prettier": "^2.7.1",
     "react": "18.0.0",
     "react-dom": "18.0.0"
   },
