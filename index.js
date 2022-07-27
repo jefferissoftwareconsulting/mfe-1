@@ -8,12 +8,15 @@ template.innerHTML = `
 class Rating extends HTMLElement {
   constructor() {
     super();
-    const shadowRoot = this.attachShadow({mode: 'closed'});
+    const shadowRoot = this.attachShadow({mode: 'open'});
     shadowRoot.appendChild(template.content.cloneNode(true));
   }
 
   connectedCallback() {
     console.log('connected')
+    document.addEventListener('eventBus', (e) => {
+      console.log('in MFE-1 event', e)
+    })
   }
 
   adoptedCallback() {
