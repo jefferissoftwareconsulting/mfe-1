@@ -1,6 +1,8 @@
+import './main.css'
+
 const template = document.createElement('template');
 template.innerHTML = `
-<div>
+<div class="container">
     Hello from MFE-1
 </div>
 `

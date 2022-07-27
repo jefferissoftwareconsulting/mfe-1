@@ -1,0 +1,25 @@
+{
+  "name": "mfe-1",
+  "version": "1.0.0",
+  "description": "",
+  "source": "src/index.js",
+  "main": "dist/main.js",
+  "module": "dist/module.js",
+  "scripts": {
+    "dev": "parcel src/index.html --open",
+    "build": "parcel build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jefferissoftwareconsulting/mfe-1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jefferissoftwareconsulting/mfe-1/issues"
+  },
+  "homepage": "https://github.com/jefferissoftwareconsulting/mfe-1#readme",
+  "devDependencies": {
+    "parcel": "^2.6.2"
+  }
+}
