@@ -9,8 +9,12 @@ export class MfeOne extends LitElement {
     }
     connectedCallback() {
         super.connectedCallback();
-        document.addEventListener('eventBus', (e) => {
-            console.log('in MFE-1 event', e);
+        document.addEventListener('eventBus', ({ detail }) => {
+            console.log('in MFE-1 event.detail', detail);
+            switch (detail.topic) {
+                case 'mfe1:increment':
+                    this.counter += 1;
+            }
         });
     }
     __increment() {
