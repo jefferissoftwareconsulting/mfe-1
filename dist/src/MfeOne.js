@@ -1,8 +1,7 @@
-var _a;
 import { __decorate } from "tslib";
 import { html, css, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
-const eventBus = (_a = window.globalEventBus) !== null && _a !== void 0 ? _a : document;
+const eventBus = window.globalEventBus;
 export class MfeOne extends LitElement {
     constructor() {
         super(...arguments);
@@ -11,16 +10,17 @@ export class MfeOne extends LitElement {
     }
     connectedCallback() {
         super.connectedCallback();
-        eventBus.addEventListener('eventBus', ({ detail }) => {
-            console.log('in MFE-1 event.detail', detail);
-            switch (detail.topic) {
+        console.log('Connected with eventBus', eventBus);
+        eventBus.addEventListener((event) => {
+            console.log('in MFE-1 event', event);
+            switch (event.topic) {
                 case 'mfe1:increment':
                     this.counter += 1;
             }
         });
     }
     __increment() {
-        eventBus.dispatchEvent(new CustomEvent('eventBus', { detail: { topic: 'mfe1:increment' } }));
+        eventBus.emit({ topic: 'mfe1:increment' });
     }
     render() {
         return html `
