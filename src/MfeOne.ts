@@ -1,6 +1,8 @@
 import { html, css, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
 
+const eventBus = (window as any).globalEventBus ?? document
+
 export class MfeOne extends LitElement {
   static styles = css`
     :host {
@@ -18,7 +20,7 @@ export class MfeOne extends LitElement {
 
   connectedCallback() {
     super.connectedCallback()
-    document.addEventListener('eventBus', ({detail}: any) => {
+    eventBus.addEventListener('eventBus', ({detail}: any) => {
       console.log('in MFE-1 event.detail', detail)
       switch(detail.topic) {
         case 'mfe1:increment':
@@ -28,7 +30,7 @@ export class MfeOne extends LitElement {
   }
 
   __increment() {
-    document.dispatchEvent(new CustomEvent('eventBus', { detail: { topic: 'mfe1:increment' } }))
+    eventBus.dispatchEvent(new CustomEvent('eventBus', { detail: { topic: 'mfe1:increment' } }))
   }
 
   render() {
