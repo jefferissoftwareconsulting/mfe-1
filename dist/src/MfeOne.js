@@ -4,12 +4,12 @@ import { property } from 'lit/decorators.js';
 export class MfeOne extends LitElement {
     constructor() {
         super(...arguments);
-        this.title = 'Hey there';
-        this.counter = 5;
+        this.title = 'MFE-1';
+        this.counter = 0;
     }
     connectedCallback() {
         super.connectedCallback();
-        window.addEventListener('eventBus', ({ detail }) => {
+        document.addEventListener('eventBus', ({ detail }) => {
             console.log('in MFE-1 event.detail', detail);
             switch (detail.topic) {
                 case 'mfe1:increment':
@@ -18,12 +18,12 @@ export class MfeOne extends LitElement {
         });
     }
     __increment() {
-        this.counter += 1;
-        window.dispatchEvent(new CustomEvent('eventBus', { detail: { topic: 'mfe1:increment', payload: this.counter } }));
+        document.dispatchEvent(new CustomEvent('eventBus', { detail: { topic: 'mfe1:increment' } }));
     }
     render() {
         return html `
-      <h2>${this.title} Nr. ${this.counter}!</h2>
+      <h2>${this.title}</h2>
+      <p>count: ${this.counter}</p>
       <button @click=${this.__increment}>Increment</button>
     `;
     }
@@ -33,7 +33,8 @@ MfeOne.styles = css `
       display: block;
       padding: 25px;
       font-family: sans-serif;
-      color: #f0f;
+      border: 1px solid cyan;
+      background: rgba(0,255,255,.1)
     }
   `;
 __decorate([

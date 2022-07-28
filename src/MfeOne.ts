@@ -7,17 +7,18 @@ export class MfeOne extends LitElement {
       display: block;
       padding: 25px;
       font-family: sans-serif;
-      color: #f0f;
+      border: 1px solid cyan;
+      background: rgba(0,255,255,.1)
     }
   `;
 
-  @property({ type: String }) title = 'Hey there';
+  @property({ type: String }) title = 'MFE-1';
 
-  @property({ type: Number }) counter = 5;
+  @property({ type: Number }) counter = 0;
 
   connectedCallback() {
     super.connectedCallback()
-    window.addEventListener('eventBus', ({detail}: any) => {
+    document.addEventListener('eventBus', ({detail}: any) => {
       console.log('in MFE-1 event.detail', detail)
       switch(detail.topic) {
         case 'mfe1:increment':
@@ -27,13 +28,13 @@ export class MfeOne extends LitElement {
   }
 
   __increment() {
-    this.counter += 1;
-    window.dispatchEvent(new CustomEvent('eventBus', { detail: { topic: 'mfe1:increment', payload: this.counter } }))
+    document.dispatchEvent(new CustomEvent('eventBus', { detail: { topic: 'mfe1:increment' } }))
   }
 
   render() {
     return html`
-      <h2>${this.title} Nr. ${this.counter}!</h2>
+      <h2>${this.title}</h2>
+      <p>count: ${this.counter}</p>
       <button @click=${this.__increment}>Increment</button>
     `;
   }
