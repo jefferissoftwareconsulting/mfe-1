@@ -19,16 +19,21 @@ export class MfeOne extends LitElement {
   @property({ type: Number }) counter = 0;
 
   connectedCallback() {
-    MfeOne.eventBus = (window as any).globalEventBus
     super.connectedCallback()
-    console.log('Connected with eventBus', MfeOne.eventBus)
-    MfeOne.eventBus.addEventListener((event: any) => {
-      console.log('in MFE-1 event', event)
-      switch(event.topic) {
-        case 'mfe1:increment':
-          this.counter += 1;
-      }
-    })
+
+    console.log('window?', window)
+
+    setTimeout(() => {
+      MfeOne.eventBus = (window as any).globalEventBus
+      console.log('Connected with eventBus', MfeOne.eventBus)
+      MfeOne.eventBus.addEventListener((event: any) => {
+        console.log('in MFE-1 event', event)
+        switch(event.topic) {
+          case 'mfe1:increment':
+            this.counter += 1;
+        }
+      })
+    }, 5000)
   }
 
   __increment() {
