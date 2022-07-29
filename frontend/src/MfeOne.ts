@@ -1,7 +1,7 @@
 import { html, css, LitElement } from "lit";
 import { property } from "lit/decorators.js";
 import eventBus from "./lib/event-bus";
-import config from "../config";
+import config from "./config";
 
 interface Settings {
   bgColor?: string;

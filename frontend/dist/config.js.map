@@ -1,1 +1,0 @@
-{"version":3,"file":"config.js","sourceRoot":"","sources":["../config.ts"],"names":[],"mappings":"AAAA,MAAM,OAAO,GAAG,uBAAuB,CAAC;AAExC,eAAe;IACb,WAAW,EAAE,GAAG,OAAO,WAAW;CACnC,CAAC","sourcesContent":["const apiHost = \"http://localhost:8001\";\n\nexport default {\n  settingsUrl: `${apiHost}/settings`,\n};\n"]}

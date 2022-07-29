@@ -4,6 +4,7 @@
   "license": "MIT",
   "author": "mfe-one",
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
     "analyze": "cem analyze --litelement",
     "start": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds\"",
