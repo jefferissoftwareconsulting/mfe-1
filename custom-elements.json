@@ -13,6 +13,14 @@
           "members": [
             {
               "kind": "field",
+              "name": "eventBus",
+              "type": {
+                "text": "any"
+              },
+              "static": true
+            },
+            {
+              "kind": "field",
               "name": "title",
               "type": {
                 "text": "string"
