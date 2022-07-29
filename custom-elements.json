@@ -20,6 +20,33 @@
             },
             {
               "kind": "field",
+              "name": "bgColor",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"rgba(0, 255, 255, 0.1)\"",
+              "attribute": "bgColor"
+            },
+            {
+              "kind": "field",
+              "name": "settingsFieldBgColor",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "settingsFieldBgColor"
+            },
+            {
+              "kind": "field",
+              "name": "settingsMode",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "settingsMode"
+            },
+            {
+              "kind": "field",
               "name": "title",
               "type": {
                 "text": "string"
@@ -39,9 +66,53 @@
             {
               "kind": "method",
               "name": "__increment"
+            },
+            {
+              "kind": "method",
+              "name": "__showSettings"
+            },
+            {
+              "kind": "method",
+              "name": "__setBgColor",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "{ target: { value: string } }"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "__saveSettings"
             }
           ],
           "attributes": [
+            {
+              "name": "bgColor",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"rgba(0, 255, 255, 0.1)\"",
+              "fieldName": "bgColor"
+            },
+            {
+              "name": "settingsFieldBgColor",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "settingsFieldBgColor"
+            },
+            {
+              "name": "settingsMode",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "settingsMode"
+            },
             {
               "name": "title",
               "type": {
