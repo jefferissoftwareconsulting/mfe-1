@@ -1,6 +1,11 @@
 {
   "name": "mfe-one",
   "version": "0.0.0",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "exports": {
+    ".": "./dist/index.js"
+  },
   "scripts": {
     "backend": "cd backend; npm start",
     "frontend": "cd frontend; npm start",

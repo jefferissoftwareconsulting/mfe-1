@@ -4,12 +4,6 @@
   "license": "MIT",
   "author": "mfe-one",
   "version": "0.0.0",
-  "main": "frontend/dist/src/index.js",
-  "module": "frontend/dist/src/index.js",
-  "exports": {
-    ".": "./frontend/dist/src/index.js",
-    "./mfe-one.js": "./frontend/dist/src/mfe-one.js"
-  },
   "scripts": {
     "analyze": "cem analyze --litelement",
     "start": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds\"",
