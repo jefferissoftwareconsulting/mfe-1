@@ -1,26 +1,26 @@
 import { __decorate } from "tslib";
-import { html, css, LitElement } from 'lit';
-import { property } from 'lit/decorators.js';
+import { html, css, LitElement } from "lit";
+import { property } from "lit/decorators.js";
+import eventBus from "./lib/event-bus";
 export class MfeOne extends LitElement {
     constructor() {
         super(...arguments);
-        this.title = 'MFE-1';
+        this.title = "MFE-1";
         this.counter = 0;
     }
     connectedCallback() {
         super.connectedCallback();
-        this.eventBus = window.globalEventBus;
-        console.log('Connected with eventBus', this.eventBus);
+        this.eventBus = eventBus();
         this.eventBus.addListener((event) => {
-            console.log('in MFE-1 event', event);
+            console.log("in MFE-1 event", event);
             switch (event.topic) {
-                case 'mfe1:increment':
+                case "mfe1:increment":
                     this.counter += 1;
             }
         });
     }
     __increment() {
-        this.eventBus.emit({ topic: 'mfe1:increment' });
+        this.eventBus.emit({ topic: "mfe1:increment" });
     }
     render() {
         return html `
@@ -36,7 +36,7 @@ MfeOne.styles = css `
       padding: 25px;
       font-family: sans-serif;
       border: 1px solid cyan;
-      background: rgba(0,255,255,.1)
+      background: rgba(0, 255, 255, 0.1);
     }
   `;
 __decorate([

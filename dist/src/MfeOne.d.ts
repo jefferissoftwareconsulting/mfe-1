@@ -1,4 +1,4 @@
-import { LitElement } from 'lit';
+import { LitElement } from "lit";
 export declare class MfeOne extends LitElement {
     eventBus: any;
     static styles: import("lit").CSSResult;
