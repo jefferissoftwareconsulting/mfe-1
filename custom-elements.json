@@ -24,7 +24,7 @@
               "type": {
                 "text": "string"
               },
-              "default": "'MFE-1'",
+              "default": "\"MFE-1\"",
               "attribute": "title"
             },
             {
@@ -47,7 +47,7 @@
               "type": {
                 "text": "string"
               },
-              "default": "'MFE-1'",
+              "default": "\"MFE-1\"",
               "fieldName": "title"
             },
             {
@@ -104,6 +104,26 @@
           "declaration": {
             "name": "MfeOne",
             "module": "/src/MfeOne.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/lib/event-bus.ts",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "eventBus"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "eventBus",
+            "module": "src/lib/event-bus.ts"
           }
         }
       ]
