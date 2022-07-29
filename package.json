@@ -4,11 +4,11 @@
   "license": "MIT",
   "author": "mfe-one",
   "version": "0.0.0",
-  "main": "dist/src/index.js",
-  "module": "dist/src/index.js",
+  "main": "public/src/index.js",
+  "module": "public/src/index.js",
   "exports": {
-    ".": "./dist/src/index.js",
-    "./mfe-one.js": "./dist/src/mfe-one.js"
+    ".": "./public/src/index.js",
+    "./mfe-one.js": "./public/src/mfe-one.js"
   },
   "scripts": {
     "analyze": "cem analyze --litelement",
