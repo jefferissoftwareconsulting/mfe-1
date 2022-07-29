@@ -1,6 +1,6 @@
 import { LitElement } from 'lit';
 export declare class MfeOne extends LitElement {
-    static eventBus: any;
+    eventBus: any;
     static styles: import("lit").CSSResult;
     title: string;
     counter: number;
