@@ -2,7 +2,7 @@ import { html, css, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
 
 export class MfeOne extends LitElement {
-  static eventBus: any
+  eventBus: any
 
   static styles = css`
     :host {
@@ -21,23 +21,19 @@ export class MfeOne extends LitElement {
   connectedCallback() {
     super.connectedCallback()
 
-    console.log('window?', window)
-
-    setTimeout(() => {
-      MfeOne.eventBus = (window as any).globalEventBus
-      console.log('Connected with eventBus', MfeOne.eventBus)
-      MfeOne.eventBus.addEventListener((event: any) => {
-        console.log('in MFE-1 event', event)
-        switch(event.topic) {
-          case 'mfe1:increment':
-            this.counter += 1;
-        }
-      })
-    }, 5000)
+    this.eventBus = (window as any).globalEventBus
+    console.log('Connected with eventBus', this.eventBus)
+    this.eventBus.addEventListener((event: any) => {
+      console.log('in MFE-1 event', event)
+      switch(event.topic) {
+        case 'mfe1:increment':
+          this.counter += 1;
+      }
+    })
   }
 
   __increment() {
-    MfeOne.eventBus.emit( { topic: 'mfe1:increment' })
+    this.eventBus.emit( { topic: 'mfe1:increment' })
   }
 
   render() {
