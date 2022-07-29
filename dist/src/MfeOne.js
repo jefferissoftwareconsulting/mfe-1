@@ -11,7 +11,7 @@ export class MfeOne extends LitElement {
         super.connectedCallback();
         this.eventBus = window.globalEventBus;
         console.log('Connected with eventBus', this.eventBus);
-        this.eventBus.addEventListener((event) => {
+        this.eventBus.addListener((event) => {
             console.log('in MFE-1 event', event);
             switch (event.topic) {
                 case 'mfe1:increment':
