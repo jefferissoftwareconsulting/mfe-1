@@ -1,31 +1,11 @@
 {
-  "name": "mfe-one",
-  "description": "Webcomponent mfe-one following open-wc recommendations",
-  "license": "MIT",
-  "author": "mfe-one",
-  "version": "0.0.0",
-  "main": "dist/src/index.js",
-  "module": "dist/src/index.js",
-  "exports": {
-    ".": "./dist/src/index.js",
-    "./mfe-one.js": "./dist/src/mfe-one.js"
-  },
   "scripts": {
-    "analyze": "cem analyze --litelement",
-    "start": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds\"",
-    "build": "tsc && npm run analyze -- --exclude dist",
-    "prepublish": "tsc && npm run analyze -- --exclude dist"
-  },
-  "dependencies": {
-    "lit": "^2.0.2"
+    "backend": "cd backend; npm start",
+    "frontend": "cd frontend; npm start",
+    "start": "npm-run-all -p backend frontend"
   },
   "devDependencies": {
-    "@custom-elements-manifest/analyzer": "^0.4.17",
-    "@web/dev-server": "^0.1.28",
-    "concurrently": "^5.3.0",
-    "prettier": "^2.7.1",
-    "tslib": "^2.3.1",
-    "typescript": "^4.5.2"
-  },
-  "customElements": "custom-elements.json"
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.7.1"
+  }
 }

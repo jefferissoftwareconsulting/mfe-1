@@ -2,16 +2,21 @@ import { __decorate } from "tslib";
 import { html, css, LitElement } from "lit";
 import { property } from "lit/decorators.js";
 import eventBus from "./lib/event-bus";
+import config from "../config";
 export class MfeOne extends LitElement {
     constructor() {
         super();
-        this.bgColor = "rgba(0, 255, 255, 0.1)";
+        this.settings = {};
         this.settingsFieldBgColor = "";
         this.settingsMode = false;
         this.title = "MFE-1";
         this.counter = 0;
         // @ts-ignore
         this.settingsMode = false;
+        fetch(config.settingsUrl)
+            .then((res) => res.json())
+            .then((settings) => (this.settings = settings))
+            .catch((err) => console.error(err));
     }
     connectedCallback() {
         super.connectedCallback();
@@ -34,13 +39,30 @@ export class MfeOne extends LitElement {
         this.settingsFieldBgColor = e.target.value;
     }
     __saveSettings() {
-        this.bgColor = this.settingsFieldBgColor;
+        const updatedSettings = {
+            ...this.settings,
+            bgColor: this.settingsFieldBgColor,
+        };
+        fetch(config.settingsUrl, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(updatedSettings),
+        })
+            .then((res) => res.json())
+            .then((settings) => (this.settings = settings));
         this.settingsMode = false;
     }
     render() {
+        if (Object.keys(this.settings).length === 0)
+            return html ` <div>Loading settings...</div> `;
         return this.settingsMode
             ? html `
-          <div class="container" style="background-color: ${this.bgColor}">
+          <div
+            class="container"
+            style="background-color: ${this.settings.bgColor}"
+          >
             <h2>${this.title}</h2>
             <div>
               <label>Background colour</label>
@@ -50,7 +72,10 @@ export class MfeOne extends LitElement {
           </div>
         `
             : html `
-          <div class="container" style="background-color: ${this.bgColor}">
+          <div
+            class="container"
+            style="background-color: ${this.settings.bgColor}"
+          >
             <h2>${this.title}</h2>
             <p>count: ${this.counter}</p>
             <p><button @click=${this.__increment}>Increment</button></p>
@@ -70,8 +95,8 @@ MfeOne.styles = css `
     }
   `;
 __decorate([
-    property({ type: String })
-], MfeOne.prototype, "bgColor", void 0);
+    property({ type: Object })
+], MfeOne.prototype, "settings", void 0);
 __decorate([
     property({ type: String })
 ], MfeOne.prototype, "settingsFieldBgColor", void 0);

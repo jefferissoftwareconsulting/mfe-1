@@ -1,3 +1,3 @@
-import { MfeOne } from './MfeOne.js';
+import { MfeOne } from './MfeOne';
 
 window.customElements.define('mfe-one', MfeOne);

@@ -1,9 +1,12 @@
 import { LitElement } from "lit";
+interface Settings {
+    bgColor?: string;
+}
 export declare class MfeOne extends LitElement {
     eventBus: any;
     static styles: import("lit").CSSResult;
     constructor();
-    bgColor: string;
+    settings: Settings;
     settingsFieldBgColor: string;
     settingsMode: boolean;
     title: string;
@@ -19,3 +22,4 @@ export declare class MfeOne extends LitElement {
     __saveSettings(): void;
     render(): import("lit-html").TemplateResult<1>;
 }
+export {};

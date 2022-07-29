@@ -4,6 +4,20 @@
   "modules": [
     {
       "kind": "javascript-module",
+      "path": "config.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "config.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/MfeOne.ts",
       "declarations": [
         {
@@ -20,12 +34,12 @@
             },
             {
               "kind": "field",
-              "name": "bgColor",
+              "name": "settings",
               "type": {
-                "text": "string"
+                "text": "Settings"
               },
-              "default": "\"rgba(0, 255, 255, 0.1)\"",
-              "attribute": "bgColor"
+              "default": "{}",
+              "attribute": "settings"
             },
             {
               "kind": "field",
@@ -90,12 +104,12 @@
           ],
           "attributes": [
             {
-              "name": "bgColor",
+              "name": "settings",
               "type": {
-                "text": "string"
+                "text": "Settings"
               },
-              "default": "\"rgba(0, 255, 255, 0.1)\"",
-              "fieldName": "bgColor"
+              "default": "{}",
+              "fieldName": "settings"
             },
             {
               "name": "settingsFieldBgColor",
@@ -159,7 +173,7 @@
           "name": "MfeOne",
           "declaration": {
             "name": "MfeOne",
-            "module": "./MfeOne.js"
+            "module": "./MfeOne"
           }
         }
       ]
@@ -174,7 +188,7 @@
           "name": "mfe-one",
           "declaration": {
             "name": "MfeOne",
-            "module": "/src/MfeOne.js"
+            "module": "/src/MfeOne"
           }
         }
       ]
