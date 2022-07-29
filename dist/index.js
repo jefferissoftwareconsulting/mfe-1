@@ -1,2 +1,2 @@
-export { MfeOne } from "./MfeOne.js";
+export { MfeOne } from './MfeOne';
 //# sourceMappingURL=index.js.map

@@ -1,5 +1,5 @@
-var apiHost = "http://localhost:8001";
+const apiHost = "http://localhost:8001";
 export default {
-    settingsUrl: "".concat(apiHost, "/settings"),
+    settingsUrl: `${apiHost}/settings`,
 };
 //# sourceMappingURL=config.js.map

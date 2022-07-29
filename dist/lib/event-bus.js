@@ -1,16 +1,14 @@
-var eventBus = function () { return ({
-    addListener: function (listener) {
+const eventBus = () => ({
+    addListener: (listener) => {
         window.globalEventBus
             ? window.globalEventBus.addListener(listener)
-            : window.addEventListener("eventBus", (function (e) {
-                return listener(e.detail);
-            }));
+            : window.addEventListener("eventBus", ((e) => listener(e.detail)));
     },
-    emit: function (event) {
+    emit: (event) => {
         window.globalEventBus
             ? window.globalEventBus.emit(event)
             : window.dispatchEvent(new CustomEvent("eventBus", { detail: event }));
     },
-}); };
+});
 export default eventBus;
 //# sourceMappingURL=event-bus.js.map
