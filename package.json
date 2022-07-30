@@ -8,6 +8,11 @@
     "frontend": "cd frontend; npm start",
     "start": "npm-run-all -p backend frontend"
   },
+  "targets": {
+    "main": {
+      "includeNodeModules": {}
+    }
+  },
   "devDependencies": {
     "npm-run-all": "^4.1.5",
     "parcel": "^2.6.2",
