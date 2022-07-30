@@ -1347,7 +1347,7 @@ class $5d70b72e6237a5c2$export$fd6e372b6dd169b5 extends (0, $03c8795ed2cf577a$ex
 ], $5d70b72e6237a5c2$export$fd6e372b6dd169b5.prototype, "counter", void 0);
 
 
+window.customElements.define("mfe-one", (0, $5d70b72e6237a5c2$export$fd6e372b6dd169b5));
 
 
-export {$5d70b72e6237a5c2$export$fd6e372b6dd169b5 as MfeOne};
 //# sourceMappingURL=index.js.map

@@ -1,7 +1,7 @@
 {
   "name": "mfe-one",
   "version": "0.0.0",
-  "source": "frontend/src/index.ts",
+  "source": "frontend/src/mfe-one.ts",
   "module": "dist/index.js",
   "scripts": {
     "backend": "cd backend; npm start",
