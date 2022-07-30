@@ -12,6 +12,7 @@
     "prepublish": "tsc && npm run analyze -- --exclude dist"
   },
   "dependencies": {
+    "@swc/helpers": "^0.4.3",
     "lit": "^2.0.2"
   },
   "devDependencies": {
